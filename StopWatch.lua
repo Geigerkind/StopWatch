@@ -27,7 +27,6 @@ end
 
 function StopWatch:Start()
 	if not Timer then
-		Time = 0
 		Timer = true
 	end
 end
