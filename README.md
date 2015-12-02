@@ -5,13 +5,9 @@ a guild mate asked me if there is a stopwatch addon in vanilla, because this cou
 ![B45Msfy.png](https://bitbucket.org/repo/EdrbMj/images/317516246-B45Msfy.png)  
 
 **Commands:**  
-/sw show
-/sw hide
-/sw scale (Number)
-
-**Download:**  
-Bitbucket Source: click  
-Bitbucket direct download: click  
+/sw show  
+/sw hide  
+/sw scale (Number)  
 
 This addon is just a quick project and will be priorticed very low in terms of fixing. (If there are any bugs)  
 
