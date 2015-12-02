@@ -1,0 +1,104 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+    ..\..\..\FrameXML\UI.xsd">	
+	
+	<Frame name="StopWatchFrame" movable="true" frameStrata="HIGH" enableMouse="true" hidden="true">
+		<Size x="120" y="50" />
+		<Anchors>
+			<Anchor point="CENTER" />
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parent_BG" file="Interface\AddOns\StopWatch\Media\TimerBackground">
+					<Anchors>
+						<Anchor point="TOPLEFT" />
+						<Anchor point="BOTTOMRIGHT" />
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="ARTWORK">
+				<FontString name="$parent_Time" inherits="GameFontNormalSmall" justifyH="LEFT">
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset x="10" y="3" />
+ 						</Anchor>
+						<Anchor point="BOTTOMRIGHT" />
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnLoad>
+				getglobal(this:GetName().."_Time"):SetText("00:00:00:00")
+				StopWatch:Initialize()
+			</OnLoad>
+			<OnUpdate>
+				StopWatch:OnUpdate(this, arg1)
+			</OnUpdate>
+			<OnMouseUp>
+				this:StopMovingOrSizing()
+			</OnMouseUp>
+			<OnMouseDown>
+				this:StartMoving()
+			</OnMouseDown>
+		</Scripts>
+		<Frames>
+			<Button name="$parent_Pause" hidden="true">
+				<Size x="20" y="20" />
+				<Anchors>
+					<Anchor point="RIGHT">
+						<Offset x="-22" y="2" />
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						StopWatch:Stop()
+						StopWatchFrame_Start:Show()
+						StopWatchFrame_Pause:Hide()
+					</OnClick>
+				</Scripts>
+				<NormalTexture file="Interface\AddOns\StopWatch\Media\PauseButton"/>
+				<PushedTexture file="Interface\AddOns\StopWatch\Media\PauseButton"/>
+				<HighlightTexture file="Interface\AddOns\StopWatch\Media\PauseButton" alphaMode="ADD"/>
+			</Button>
+			<Button name="$parent_Start">
+				<Size x="20" y="20" />
+				<Anchors>
+					<Anchor point="RIGHT">
+						<Offset x="-22" y="2" />
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						StopWatch:Start()
+						StopWatchFrame_Start:Hide()
+						StopWatchFrame_Pause:Show()
+					</OnClick>
+				</Scripts>
+				<NormalTexture file="Interface\Buttons\UI-SpellbookIcon-NextPage-Up"/>
+				<PushedTexture file="Interface\Buttons\UI-SpellbookIcon-NextPage-Down"/>
+				<HighlightTexture file="Interface\Buttons\UI-SpellbookIcon-NextPage-Up" alphaMode="ADD"/>
+			</Button>
+			<Button name="$parent_Reset">
+				<Size x="20" y="20" />
+				<Anchors>
+					<Anchor point="RIGHT">
+						<Offset x="-5" y="2" />
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						StopWatch:Reset()
+						StopWatchFrame_Start:Show()
+						StopWatchFrame_Pause:Hide()
+					</OnClick>
+				</Scripts>
+				<NormalTexture file="Interface\AddOns\StopWatch\Media\ResetButton"/>
+				<PushedTexture file="Interface\AddOns\StopWatch\Media\ResetButton"/>
+				<HighlightTexture file="Interface\AddOns\StopWatch\Media\ResetButton" alphaMode="ADD"/>
+			</Button>
+		</Frames>
+	</Frame>
+	
+</Ui>
