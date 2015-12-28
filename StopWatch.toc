@@ -4,7 +4,6 @@
 ## Notes: A simple stopwatch.
 ## Notes-deDE: Eine simple Stoppuhr.
 ## Author: Shino <Synced> - Kronos
-## SavedVariablesPerCharacter: DPSMateSettings, DPSMateUser, DPSMateUserCurrent, DPSMateCombatTime, DPSMateHistory
 
 StopWatch.lua
 StopWatch.xml

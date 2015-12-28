@@ -6,8 +6,8 @@ local Time = 0
 local Timer = false
 
 function StopWatch:Initialize()
-	SLASH_SW1 = "/sw"
-	SlashCmdList["SW"] = function(msg) 
+	SLASH_STW1 = "/stw"
+	SlashCmdList["STW"] = function(msg) 
 		local cmd = string.lower(msg)
 		if cmd == "show" then
 			StopWatch:Show()
@@ -18,9 +18,9 @@ function StopWatch:Initialize()
 			StopWatchFrame:SetScale(tonumber(scale))
 		else
 			StopWatch:SendMessage("Those commands are available:")
-			StopWatch:SendMessage("- show (BSP: /sw show)")
-			StopWatch:SendMessage("- hide (BSP: /sw hide)")
-			StopWatch:SendMessage("- scale (BSP: /sw scale 1.5)")
+			StopWatch:SendMessage("- show (BSP: /stw show)")
+			StopWatch:SendMessage("- hide (BSP: /stw hide)")
+			StopWatch:SendMessage("- scale (BSP: /stw scale 1.5)")
 		end
 	end
 end
