@@ -9,7 +9,6 @@ a guild mate asked me if there is a stopwatch addon in vanilla, because this cou
 /sw hide  
 /sw scale (Number)  
 
-This addon is just a quick project and will be priorticed very low in terms of fixing. (If there are any bugs)  
 
 cheers,  
 Shino
