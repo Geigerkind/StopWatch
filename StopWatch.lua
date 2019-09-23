@@ -17,7 +17,7 @@ function StopWatch:Initialize()
 			local scale = string.sub(msg, 7)
 			StopWatchFrame:SetScale(tonumber(scale))
 		else
-			StopWatch:SendMessage("Those commands are available:")
+			StopWatch:SendMessage("These commands are available:")
 			StopWatch:SendMessage("- show (BSP: /stw show)")
 			StopWatch:SendMessage("- hide (BSP: /stw hide)")
 			StopWatch:SendMessage("- scale (BSP: /stw scale 1.5)")
