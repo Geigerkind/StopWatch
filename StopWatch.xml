@@ -30,17 +30,15 @@
 		</Layers>
 		<Scripts>
 			<OnLoad>
-				getglobal(this:GetName().."_Time"):SetText("00:00:00:00")
+				_G[self:GetName().."_Time"]:SetText("00:00:00:00")
 				StopWatch:Initialize()
 			</OnLoad>
-			<OnUpdate>
-				StopWatch:OnUpdate(this, arg1)
-			</OnUpdate>
+			<OnUpdate function="StopWatch_OnUpdate" />
 			<OnMouseUp>
-				this:StopMovingOrSizing()
+				self:StopMovingOrSizing()
 			</OnMouseUp>
 			<OnMouseDown>
-				this:StartMoving()
+				self:StartMoving()
 			</OnMouseDown>
 		</Scripts>
 		<Frames>

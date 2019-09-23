@@ -43,7 +43,7 @@ function StopWatch:Reset()
 	StopWatchFrame_Time:SetText(StopWatch:TimeFormat(Time))
 end
 
-function StopWatch:OnUpdate(self, elapsed)
+function StopWatch_OnUpdate(self, elapsed)
 	if Timer then
 		Time = Time + elapsed
 		StopWatchFrame_Time:SetText(StopWatch:TimeFormat(Time))
